@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Printing Methods</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+    <style>
+        h1 {
+            border-bottom: 3px dashed black;
+            font-family: pacifico, cursive;
+            letter-spacing: 3px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Printing Methods in JavaScript</h1>
+
+    <script>
+        document.write('Hello World!!!');
+        console.log('Hello World!!!');
+        document.write("<h2>This is My <big style='color: red;'>JavaScript</big> Complete Training</h2>");
+        console.log("<h2>This is My <big style='color: red;'>JavaScript</big> Complete Training</h2>");
+
+        let a = 10;
+
+        // document.write('<h3>Original Value of a ='  + '<big style= "color: blue">' + a +'</big>' +'</h3>');
+        // document.write('<h3>Original Value of a = <big style= "color: blue">' + a +'</big></h3>');
+        document.write(`<h3>Original Value of a = <big style= "color: blue">${a}</h3>`);
+        console.lo(`<h3>Original Value of a = <big style= "color: blue">${a}</h3>`);
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <title>Variables in JavaScript</title>
+
+    <style>
+        h1 {
+            border-bottom: 3px dashed black;
+            font-family: pacifico, cursive;
+            letter-spacing: 3px;
+        }
+
+        #div2 {
+            font-family: courier new;
+            font-size: 22px;
+            padding-left: 50px;
+            line-height: 2em;
+        }
+    </style>
+</head>
+<body>
+    <div id="output"></div>
+
+    <h1>Variables in JavaScript</h1>
+    <div id="div2">Hi <br> Hi <br></div>
+
+    <script>
+        const out = document.getElementById('output');
+        let a = 10;
+        let name = 'Paulo';
+        let _b = 20;
+
+        out.innerHTML += `This is the first test<br>`;
+        document.write('Value of a = ' + a + '<br>');
+        out.innerHTML += `Value of a = ${a}<br>`;
+        out.innerHTML += `My Full Name is: <b>${name}<b><br>`;
+        document.write(`The value of <b>${_b}<b><br>`)
+    </script>
+    
+</body>
+</html>

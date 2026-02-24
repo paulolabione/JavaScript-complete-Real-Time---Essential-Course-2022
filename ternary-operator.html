@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <title>Ternary Operator</title>
+
+  <style>
+    h1 {
+      font-family: pacifico, cursive;
+      border-bottom: 3px dashed black;
+    }
+  </style>
+</head>
+<body>
+  <div id="output"></div>
+
+  <script>
+    const out = document.getElementById('output');
+    let gend = 'm';
+    let status = (gend === 'm') ? 'He' : 'She';
+    let num;
+    let status2;
+    let name = 'Paulo';
+    let perc = 35;
+    let status3;
+
+    out.innerHTML += `This is the first test.<br>`;
+    out.innerHTML += `<h1>Ternary Operator in JavaScript</h1><br>`;
+    out.innerHTML += `The person is identified as: <b>${status}</b><br>`;
+    num = parseInt(prompt('Enter a number: '));
+    status2 = (num % 2 === 0) ? 'Even Number' : 'Odd Number';
+    out.innerHTML += `The number ${num} is identified as: <b>${status2}<b><br>`;
+    status3 = (perc >= 35) ? 'Pass' : 'Fail';
+    out.innerHTML += `${name} has ${status3} the test.<br>`;
+  </script>
+  
+</body>
+</html>

@@ -1,0 +1,1 @@
+document.write("<h3>This is Some Default <b style= 'color: red;'>EXTERNAL JS</b> Content called</h3>")

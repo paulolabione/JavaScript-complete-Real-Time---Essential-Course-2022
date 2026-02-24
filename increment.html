@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Increment in JavaScript</title>
+</head>
+<body>
+
+  <div id="output"></div>
+
+  <script>
+    const out = document.getElementById('output');
+    let a = 10;
+    let b = 10;
+
+    out.innerHTML += `Value of a with pro increment (same line) is:${a++}<br>`;
+    out.innerHTML += `Value of b with pre increment (same line) is:${++b}<br>`;
+    out.innerHTML += `The value of a in the next line: ${a}<br>`;
+    out.innerHTML += `The value of b in the next line: ${b}<br>`;
+  </script>
+  
+</body>
+</html>

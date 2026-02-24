@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <title>Data Types In JavaScript</title>
+
+  <style>
+    h1 {
+      border-bottom: 3px dashed black;
+      font-family: pacifico, cursive;
+      letter-spacing: 3px;
+    }
+    div {
+      font-family: courier new;
+      font-size: 22px;
+      padding-left: 50px;
+      line-height: 2em;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Number Datatypes [ It is Premitive Datatypes ]</h1>
+  <div>
+    <script>
+      let a = 10;
+      let b = 10.25;
+      let name = 'Paulo';
+      let c = true;
+      let d = false;
+      let x
+      let e = null;
+      let f = new Array(3);
+      let g = new Date();
+
+      document.write(`The value of a = ${a}<br>`);
+      document.write(`The value of b = ${b}<br>`);
+      document.write(`The data type of a = ${typeof(a)}<br>`);
+      document.write(`The data type of b = ${typeof(b)}<br>`);
+
+      document.write(`</div><h1>String Datatypes [ It is Premitive Datatypes ]</h1><div><br>`);
+      document.write(`My Full Name is ${name}<br>`);
+      document.write(`The Datatype of name is ${typeof(name)}<br>`);
+
+      document.write(`</div><h1>Boolean Datatypes [ It is Premitive Datatypes ]</h1><div><br>`);
+      document.write(`The value of c = ${c}, and the Datatype of c is ${typeof(c)}<br>`);
+      document.write(`The value of d = ${d}, and the Datatype of d is ${typeof(d)}<br>`);
+
+      document.write(`</div><h1>Undefined Datatypes [ It is Premitive Datatypes ]</h1><div><br>`);
+      document.write(`The Datatype of x that do not have a value is ${typeof(x)}<br>`);
+
+      document.write(`</div><h1>Null Datatypes [ It is Premitive Datatypes ]</h1><div><br>`);
+      document.write(`The Value of e is ${e} and the Datatype is ${typeof(e)}<br>`);
+
+      document.write(`</div><h1>Null, Array or predefined Functions Datatypes [ It is Non-Premitive Datatypes ]</h1><div><br>`);
+      document.write(`The Value of f is ${f} and the Datatype is ${typeof(f)}<br>`);
+      document.write(`The Value of g is ${g} and the Datatype is ${typeof(g)}<br>`);
+
+    </script>
+  </div>
+  
+</body>
+</html>
