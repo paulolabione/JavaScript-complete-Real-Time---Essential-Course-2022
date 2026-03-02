@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For In For String Arrays</title>
+
+  <style>
+    #test {
+      background-color: lightgrey;
+      font-weight: bold;
+      text-align: center;
+      width: fit-content;
+      margin: 10px auto;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    #container {
+      white-space: pre; /* Preserves line breaks frm textContent */
+    }
+  </style>
+</head>
+<body>
+
+  <div id="test"></div>
+  <div id="container"></div>
+
+  <script>
+    const outTest = document.getElementById('test');
+    const outContainer = document.getElementById('container');
+
+    outTest.textContent = 'This is the first test.';
+
+    let myArray = [1, 2, 3, 4, 5];
+    let indexArray = [];
+    let valuesArray = [];
+
+    outContainer.textContent += `myArray indexes:\n`; 
+    for (let index in myArray) {
+      indexArray.push(Number(index));
+    }
+     outContainer.textContent += `myArray = [${indexArray.join(', ')}]\n\n`;
+
+     outContainer.textContent += `myArray values:\n`;
+     for (let number of myArray)  {
+      valuesArray.push(number);
+     }
+     outContainer.textContent += `myArray = [${valuesArray.join(', ')}]\n\n`;
+  </script>
+  
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For Loops</title>
+</head>
+<body>
+  <div id="test"></div>
+  <div id="text"></div>
+  <div id="container"></div>
+
+  <script>
+    const outTest = document.getElementById('test');
+    const outText = document.getElementById('text');
+    const outContainer = document.getElementById('container');
+
+    outTest.textContent = 'This is the first test.'
+    outText.textContent = 'Enter your DOB:'
+
+    const select = document.createElement('select');
+    const select2 = document.createElement('select');
+    const select3 = document.createElement('select');
+
+    select.appendChild(new Option('Day'));
+    select2.appendChild(new Option('Month'));
+    select3.appendChild(new Option('Year'));
+
+    outContainer.appendChild(select);
+    outContainer.appendChild(select2);
+    outContainer.appendChild(select3);
+
+    for (let i = 1; i <= 31; i++) {
+      select.appendChild(new Option(i))
+    }
+
+    let monthList = ['Jan', 'Fev', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+
+    monthList.forEach(function(month, index) {
+      select2.appendChild(new Option(month, index + 1));
+    });
+
+    for (let i = 1900; i <= 2050; i++) {
+      select3.appendChild(new Option(i));
+    }
+
+    // Set the current date After populating options
+    const today = new Date();
+    select.value = today.getDate();
+    select2.value = today.getMonth() + 1 // JS months start at 0
+    select3.value = today.getFullYear(); 
+
+  </script>
+  
+</body>
+</html>

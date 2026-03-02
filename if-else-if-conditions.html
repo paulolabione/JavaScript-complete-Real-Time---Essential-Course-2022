@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>If Else If Conditions</title>
+
+  <style>
+    h2 {
+      font-family: Endor;
+      letter-spacing: 4px;
+      border-bottom: 3px dashed #ccc;
+      color: #ccc;
+    }
+
+    #grade, #my-test, #output2 {
+      font-family: courier new;
+      font-size: 22px;
+      padding-left: 50px;
+      line-height: 2em;
+    }
+  </style>
+</head>
+<body>
+  <div id="output"></div>
+  <h2>if else if and else Conditions</h2>
+  <div id="output2"></div>
+  <div id="output3"></div>
+
+  <div>
+    <script>
+    const out = document.getElementById('output');
+    const out2 = document.getElementById('output2');
+    const out3 = document.getElementById('output3');
+
+    const gradeDiv = document.createElement('div');
+    gradeDiv.id = 'grade';
+
+    let name = 'Rambo';
+    let perc = 75;
+    let gend = 'm';
+
+    const test = document.createElement('div');
+    test.id = 'my-test';
+    test.textContent = 'This is my first test.';
+    out.appendChild(test);
+    out2.innerHTML += `Hi ${name}<br><br>`;
+
+    status = (perc >= 35) ? 'Pass' : 'Fail';
+
+    if (perc >= 75) gradeDiv.textContent = 'Grade: A';
+    else if (perc >= 65) gradeDiv.textContent = 'Grade: B';
+    else if (perc >= 55) gradeDiv.textContent = 'Grade: C';
+    else if (perc >= 45) gradeDiv.textContent = 'Grade: D';
+    else if (perc >= 35) gradeDiv.textContent = 'Grade: E';
+    else gradeDiv.textContent = 'Grade: F';
+
+    out3.appendChild(gradeDiv);  // append only once
+
+  </script>
+  </div>
+
+</body>
+</html>

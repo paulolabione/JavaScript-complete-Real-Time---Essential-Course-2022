@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Switch Conditions</title>
+
+  <style>
+    #test {
+      margin-bottom: 30px;
+    }
+  </style>
+</head>
+<body>
+  <div id="test"></div>
+  <div id="switch"></div>
+
+  <script>
+    const out = document.getElementById('test');
+    const out2 = document.getElementById('switch');
+
+    if (out) {
+      out.textContent = 'This is the first test'
+    }
+
+    const switchDiv = document.createElement('div');
+    switchDiv.id = 'switch2';
+
+    let course = prompt('Please enter the programming language (capital letters): ');
+
+    let text;
+    switch(course) {
+      case 'HTML':
+        text = 'This is the HTML course.';
+        break; 
+      case 'CSS':
+        text = 'This is the CSS course.';
+        break;
+      case 'JS':
+        text = 'This is the JavaScript course.';
+        break;
+      default:
+        text = 'Unknown course';
+    }
+
+    //Updage the DOM once
+    if (out2) {
+      switchDiv.textContent = text;
+      out2.appendChild(switchDiv)
+    }
+
+  </script>
+  
+</body>
+</html>

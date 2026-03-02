@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>While Loop</title>
+
+  <style>
+    #test {
+      margin-bottom: 50px;
+    }
+
+    #while {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div id="test"></div>
+  <div id="while"></div>
+  <div id="select">
+    <select id="dayselect"><option>Day</option></select>
+    <select id="dayselect2"><option>Day</option></select>
+    <select id="dayselect3"><option>Day</option></select>
+  </div>
+
+  <script>
+    let test = 'test';
+    const outTest = document.getElementById('test');
+    const outWhile = document.getElementById('while');
+    const select = document.getElementById('dayselect');
+    const select2 = document.getElementById('dayselect2');
+    const select3 = document.getElementById('dayselect3');
+  
+    outTest.textContent = `This is my first ${test}.`;
+    outWhile.textContent = `Please enter you DOB:`;
+
+    for (let i = 1; i <= 31; i++) {
+      select.innerHTML += `<option>${i}</option>`;
+    }
+    for (let i = 1; i <= 31; i++) {
+      const option = document.createElement('option');
+      option.textContent = i;
+      select2.appendChild(option);
+    }
+    let i = 1;
+    while (i <= 31) {
+      const option2 = document.createElement('option');
+      option2.textContent = `${i}`;
+      select3.appendChild(option2);
+      i++;
+    }
+  </script>
+  
+</body>
+</html>

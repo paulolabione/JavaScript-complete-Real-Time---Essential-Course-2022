@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>If Else Conditions</title>
+
+  <style>
+    #success {
+      position: absolute;
+      color: green;
+      top: 59px;
+      right: 160px;
+      background-color: lightgray;
+    }
+
+    #error {
+      position: absolute; 
+      color: red;
+      top: 29px;
+      right: 50px;
+      background-color: lightgray;
+    }
+
+    #img {
+      position: absolute;
+      top: 50px;
+      right: 120px;
+      border-radius: 3px;
+      width: 30px;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="output"></div>
+
+  <h2><u>Welcome to Vodafone Home Page</u></h2>
+  <p>The first version of PHP was named Personal Home Page Tools (PHP Tools)</p>
+  <p>PHP 2 introduced built-in support for accessing databases, cookie handling, and user-defined functions.</p>
+
+  <script>
+    const out = document.getElementById('output');
+
+    let email = 'rambo@gmail.com'
+    let pwd = 'Rambo123'
+    let name = 'Rambo'
+
+    out.innerHTML += `This is the first test.<br>`;
+
+    // if (email === 'rambo@gmail.com' && pwd === 'Rambo123') {
+    //   out.innerHTML += `<div id='success'>You are Successfully Logged In ${name}</div>`;
+    //   out.innerHTML += `<img id='img' src='images/Rambo.jpg'>`;
+    // }else if (email !== 'rambo@gmail.com' || pwd !== 'Rambo123')  {
+    //   out.innerHTML += `<div id='error'>Wrong Email and/or Password!!! YOU ARE  NOT RAMBO!!!</div>`;
+    // }
+
+     if (email === 'rambo@gmail.com' && pwd === 'Rambo123') {
+      //Success message
+      const  successDiv = document.createElement('div');
+      successDiv.id = 'success';
+      successDiv.textContent = `You are successfully Logged In ${name}`;
+      out.appendChild(successDiv)
+
+      //Image
+      const img = document.createElement('img');
+      img.id = 'img';
+      img.src = 'images/Rambo.jpg';
+      img.alt = 'Profile Picture of Rambo'
+      img.classList.add('profile-img')
+      out.appendChild(img)
+     }
+  </script>
+  
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Do While Loops</title>
+</head>
+<body>
+  <div id="outtest"></div>
+  <div id="outtext"></div>
+  <div id="outselect"></div>
+
+  <script>
+    const test = document.getElementById('outtest');
+    const text = document.getElementById('outtext')
+    const container = document.getElementById('outselect');
+
+    test.textContent = 'This is the first test';
+    text.textContent = 'Enter your DOB:';
+ 
+    // Create 3 selects
+    const select1 = document.createElement('select');
+    const select2 = document.createElement('select');
+    const select3 = document.createElement('select');
+
+    container.appendChild(select1);
+    container.appendChild(select2);
+    container.appendChild(select3);
+
+    // Default options
+    select1.appendChild(new Option('Day'));
+    select2.appendChild(new Option('Month'));
+    select3.appendChild(new Option('Year'));
+    
+    // Day
+    for (let i = 1; i <= 31; i++) {
+      select1.innerHTML += `<option>${i}</option>`;
+    }
+    // Month
+    // for (let i = 1; i <= 12; i++) {
+    //   select2.appendChild(new Option(i));
+    // } 
+
+    // Month
+    let month = 1;
+    let monthList = ['Jan', 'Fev', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+    do {
+      select2.appendChild(new Option(monthList[month - 1]));
+      month++;
+    } while (month <= monthList.length);
+    
+    // Year
+    let i = 1900;
+    while (i <= 2050) {
+      select3.appendChild(new Option(i));
+      i++;
+    }
+  </script>
+  
+</body>
+</html>

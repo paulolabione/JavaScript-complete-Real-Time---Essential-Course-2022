@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>If Conditions In JavaScript</title>
+
+  <style>
+    #warning {
+      background-color: cyan;
+      /* padding: 1px; */
+      /* overflow: hidden; */
+      display: flow-root;
+      margin-top: 25px;
+    }
+    .test {
+      background-color: yellow;
+      text-align: center;
+      width: 200px;
+      margin: 5px auto;
+      border-radius: 5px;
+      padding: 30px;;
+    }
+    .dyn {
+      /* font-size: 2em;
+      font-weight: bold;
+      margin-top: 30px; */
+      background-color: #ccc;
+      font-family: courier new;
+      text-align: center;
+      padding: 8px;
+      width: 65%;
+      margin: 0px auto;
+      font-weight: 900;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div id="warning"></div>
+
+  <script>
+    const out = document.getElementById('warning');
+    let freeCalls = 101;
+    let payDate = 5;
+    let currentDate = 6;
+
+    out.innerHTML += `<div class='test'>This is the first test.</div><br>`;
+
+    if (freeCalls > 100 && payDate - currentDate <= 3 && payDate - currentDate >= 0) {
+      out.innerHTML += `<div class='dyn'>Please pay the bill to avoid late payment charges.</div><br>`;
+    } else if (payDate - currentDate < 0) {
+      out.innerHTML += `<div class='dyn' style='color: red'>Go pay now BASTARD!!!</div><br>`;
+    }
+
+  
+
+  </script>
+  
+</body>
+</html>

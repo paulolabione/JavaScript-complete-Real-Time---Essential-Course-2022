@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <title>Arrays</title>
+
+  <style>
+
+    h1 {
+      border-bottom: 3px dashed black;
+      font-family: pacifico, cursive;
+      letter-spacing: 3px;
+    }
+
+    #test {
+      background-color: yellow;
+    }
+
+    #heading, #container {
+      background-color: cyan;
+    }
+
+    #heading2, #container2 {
+      background-color: lightpink;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div id="test"></div>
+  <div id="heading"></div>
+  <div id="container"></div>
+  <div id="heading2"></div>
+  <div id="container2"></div>
+
+  <script>
+    const outTest = document.getElementById('test');
+    const outHeading = document.getElementById('heading');
+    const outContainer = document.getElementById('container');
+    const outHeading2 = document.getElementById('heading2');
+    const outContainer2 = document.getElementById('container2');
+
+    outTest.textContent = 'This is the first test.';
+
+    const h1 = document.createElement('h1');
+    h1.textContent = 'Variables in JavaScript';
+    outHeading.appendChild(h1);
+    let a = 10;
+    outContainer.textContent = `Variable value of a = ${a}`;
+
+    const h12 = document.createElement('h1');
+    h12.textContent = 'Arrays in JavaScript';
+    outHeading2.appendChild(h12);
+    let b = [1, 2, 3];
+    outContainer2.textContent = `Array value of b = [${b.join(', ')}]`;
+  
+  </script>
+  
+</body>
+</html>
