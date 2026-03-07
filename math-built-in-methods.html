@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <title>Math Built-IN Methods In JavaScript</title>
+
+  <style>
+    #titleh1 {
+      font-family: Arial, sans-serif;
+      background-color: lightblue;
+      color: #f55e2f;
+      width: fit-content;
+      margin: 0 auto 30px auto;
+      padding: 5px 15px;
+      border-radius: 15px;
+      border: 2px dotted #000;
+    }
+
+    .subheadingh2 {
+      margin-top: 30px;
+      font-family: Pacifico, cursive;
+      border-bottom: 5px dotted #444;
+      letter-spacing: 2px;
+    }
+
+    .paragraph {
+      font-family: Courier New, cursive;
+      font-size: 23px;
+      line-height: 3em;
+    }
+
+    #span1 {
+      color: rgb(241, 62, 62);
+    }
+
+    #span2 {
+      color: rgb(18, 140, 221);
+      font-weight: 900;
+      font-size: 25px;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="container">
+    <div id="title"></div>
+    <div id="sections">
+      <!-- Math Pre-defined Constant Object -->
+       <section id="mathpredefined">
+        <!-- Subheading and paragraphs-->
+       </section>
+
+        <!-- Math User-defined Constant Object -->
+       <section id="mathuserdefined">
+        <!-- Subheading and paragraphs-->
+       </section>
+    </div>
+  </div>
+
+  <script>
+    const elContainer = document.getElementById('container');
+    const elTitle = document.getElementById('title');
+    const elSections = document.getElementById('sections');
+    const elMathPreDefined = document.getElementById('mathpredefined');
+    const elMathUserDefined = document.getElementById('mathuserdefined');
+
+    const titleH1 = document.createElement('h1');
+    titleH1.id = 'titleh1';
+    titleH1.textContent = 'Math Built-In Methods In JavaScript';
+    elTitle.appendChild(titleH1);
+
+
+    function rSubheading(cont, text)  {
+      const subheadingH2 = document.createElement('h2');
+      subheadingH2.classList.add('subheadingh2');
+      subheadingH2.innerHTML = text;
+      cont.appendChild(subheadingH2);
+    }
+
+
+    function rParagraph(cont, text) {
+      const paragraph = document.createElement('p');
+      paragraph.classList.add('paragraph');
+      paragraph.innerHTML = text + '<hr>';
+      cont.appendChild(paragraph);
+    }
+
+    // Math Pre-Defined Constant Object
+    rSubheading(elMathPreDefined, `<span id= 'span1'>Math Pre-defined Constant Object</span> Methods in JavaScript`);
+    rParagraph(elMathPreDefined, `PI Value 180&deg; In Radians: <span id= 'span2'>${Math.PI}</span>`);
+    rParagraph(elMathPreDefined, `SQRT OF 2: <span id= 'span2'>${Math.SQRT2}</span>`);
+    rParagraph(elMathPreDefined, `SQRT OF 1/2: <span id= 'span2'>${Math.SQRT1_2}</span>`);
+    rParagraph(elMathPreDefined, `Eulers Value: <span id= 'span2'>${Math.E}</span>`);
+    rParagraph(elMathPreDefined, `Narural LN2: <span id= 'span2'>${Math.LN2}</span>`);
+    rParagraph(elMathPreDefined, `Narural LN10: <span id= 'span2'>${Math.LN10}</span>`);
+    rParagraph(elMathPreDefined, `Log Base 10 of Eulers Constant: <span id= 'span2'>${Math.LOG10E}</span>`);
+    
+    // Math User-Defined Constant Object
+    rSubheading(elMathUserDefined, `<span id= 'span1'>Math User-defined Constant Object</span> Methods in JavaScript`);
+    rParagraph(elMathUserDefined, `Absolute Value of Math.abs(-9): <span id= 'span2'>${Math.abs(-9)}</span>`);
+    rParagraph(elMathUserDefined, `Pow Value of Math.pow(2, 3): <span id= 'span2'>${Math.pow(2, 3)}</span>`);
+    rParagraph(elMathUserDefined, `Sqrt Value of Math.sqrt(4): <span id= 'span2'>${Math.sqrt(4)}</span>`);
+    rParagraph(elMathUserDefined, `Min Value of Math.min(1, 4, 8): <span id= 'span2'>${Math.min(1, 4, 8)}</span>`);
+    rParagraph(elMathUserDefined, `Max Value of Math.min(1, 4, 8): <span id= 'span2'>${Math.max(1, 4, 8)}</span>`);
+    rParagraph(elMathUserDefined, `Floor Value of Math.floor(3224.9): <span id= 'span2'>${Math.floor(3224.9)}</span>`);
+    rParagraph(elMathUserDefined, `Ceil Value of Math.ceil(3224.4): <span id= 'span2'>${Math.ceil(3224.4)}</span>`);
+    rParagraph(elMathUserDefined, `Round Value of Math.round(3224.5): <span id= 'span2'>${Math.round(3224.5)}</span>`);
+    rParagraph(elMathUserDefined, `Sin 90&deg Math.sin(3.141592653589793): <span id= 'span2'>${Math.sin(3.141592653589793 / 2)}</span>`);
+    rParagraph(elMathUserDefined, `Tan 45&deg Math.sin(3.141592653589793): <span id= 'span2'>${Math.tan(Math.PI / 4)}</span>`);
+    rParagraph(elMathUserDefined, `Cos 60&deg Math.cos(Math.PI / 3): <span id= 'span2'>${Math.cos(Math.PI / 3)}</span>`);
+    rParagraph(elMathUserDefined, `Round Value of Math.random(): <span id= 'span2'>${Math.random()}</span>`);
+  </script>
+  
+</body>
+</html>

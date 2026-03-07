@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multi Dimensional Arrays</title>
+
+  <style>
+    #test {
+      color: blue;
+      background-color: lightgrey;
+      width: fit-content;
+      margin: 20px auto;
+      font-weight: bold;
+      border-radius: 3px;
+      padding: 5px;
+      border: 1px dashed black;
+    }
+
+    #container {
+      white-space: pre;
+    }
+
+    table, th, td {
+      border: 3px solid black;
+      border-collapse: collapse;
+      padding: 8px 12px;
+      text-align: center;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div id="test"></div>
+  <div id="container"></div>
+
+  <script>
+    const outTest = document.getElementById('test');
+    const outContainer = document.getElementById('container');
+
+    outTest.textContent = 'Multi Dimensional Arrays';
+
+    const c = [[1, 'Tony', [78, 80, 87, 98, 67, 98]], [2, 'Richard', [76, 50, 98, 67, 88, 87]]];
+
+    outContainer.textContent += `Tony results: ${c[0][2].join(', ')}\n\n`;
+    outContainer.textContent += `Richard results: ${c[1][2].join(', ')}\n\n`;
+
+    const table = document.createElement('table');
+    table.border = '40';
+    table.id = 'table';
+
+    /* Create thead and tbody */
+    const thead = document.createElement('thead');
+    const tbody = document.createElement('tbody');
+
+    const rowTitle = document.createElement('tr');
+
+    const headingTitle = document.createElement('th');
+    headingTitle.colSpan = 8;
+    headingTitle.id = 'headingtitle';
+    headingTitle.textContent = 'List of Student Mark Sheet';
+
+    rowTitle.appendChild(headingTitle);
+    thead.appendChild(rowTitle);
+
+    const subjects = ['French', 'Maths', 'Geography', 'Design', 'Sports', 'English']
+    
+    // First header row
+    const headerRow1 = document.createElement('tr');
+
+    const numberHeader = document.createElement('th');
+    numberHeader.textContent = 'Number';
+    numberHeader.rowSpan = 2 // Spans two header rows
+
+    const nameHeader = document.createElement('th');
+    nameHeader.textContent = 'Name';
+    nameHeader.rowSpan = 2 // Spans two header rows
+
+    const marksHeader = document.createElement('th');
+    marksHeader.textContent = 'Marks';
+    marksHeader.colSpan = subjects.length; // spans all the subjects
+
+    headerRow1.appendChild(numberHeader);
+    headerRow1.appendChild(nameHeader);
+    headerRow1.appendChild(marksHeader);
+
+    thead.appendChild(headerRow1);
+
+    // Second Header Row (subjects)
+    const headerRow2 = document.createElement('tr');
+
+    // Add subject headers
+    subjects.forEach(subject => {
+      const th = document.createElement('th');
+      th.textContent = subject;
+      headerRow2.appendChild(th);
+    });
+
+    thead.appendChild(headerRow2);
+
+
+    c.forEach(student => {
+      const row = document.createElement('tr');
+
+      const numberCell = document.createElement('td');
+      numberCell.textContent = student[0];
+
+      const nameCell = document.createElement('td');
+      nameCell.textContent = student[1];
+
+      row.appendChild(numberCell);
+      row.appendChild(nameCell);
+      
+      // Add marks individually
+      student[2].forEach(mark => {
+        const markCell = document.createElement('td');
+        markCell.textContent = mark;
+        row.appendChild(markCell);
+      })
+
+      tbody.appendChild(row);
+    })
+
+    /* Add thead and tbody to the table */
+    table.appendChild(thead);
+    table.appendChild(tbody);
+
+    outContainer.appendChild(table);
+
+  </script>
+  
+</body>
+</html>

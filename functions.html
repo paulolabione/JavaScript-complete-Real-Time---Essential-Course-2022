@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <title>Functions</title>
+
+  <style>
+    #test {
+      color: red;
+      background-color: lightblue;
+      width: fit-content;
+      margin: 10px auto;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px dashed black;
+      text-decoration: underline;
+    }
+
+    #container {
+      white-space: pre;
+    }
+
+    h1 {
+      font-family: pacifico, cursive;
+      border-bottom: 3px dashed black;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="test"></div>
+  <div id="container"></div>
+
+  <script>
+    const outTest = document.getElementById('test');
+    const outContainer = document.getElementById('container');
+
+    outTest.textContent += 'FUNCTIONS'
+
+    const h1 = document.createElement('h1');
+    h1.textContent += `(Function - 01) Without Parameters & Without Return`;
+    outContainer.appendChild(h1)
+
+    function test() {
+      // outContainer.textContent += `Line 01\n`
+      // outContainer.textContent += `Line 02\n`
+      // outContainer.textContent += `Line 03\n`
+      for (let i = 1; i <= 5; i++) {
+        const p = document.createElement('p');
+        p.textContent = `Line 0${i}`;
+        outContainer.appendChild(p);
+      }
+      const hr = document.createElement('hr');
+      outContainer.appendChild(hr);
+    };
+
+    function add(a, b) {
+      return a + b;
+    };
+
+    test();
+    test();
+
+    const p = document.createElement('p');
+    p.textContent = add(5, 4);
+    outContainer.appendChild(p); 
+
+  </script>
+  
+</body>
+</html>

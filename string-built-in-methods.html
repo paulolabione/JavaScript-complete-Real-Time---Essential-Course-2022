@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <title>String Built-In Methods In JavaScript</title>
+
+  <style>
+    #titleheading {
+      background-color: lightblue;
+      color: #333;
+      width: fit-content;
+      margin: 0 auto 40px auto;
+      border-radius: 10px;
+      padding: 5px 10px;
+      font-family: Arial, sans-serif;
+      border: 2px dashed black;
+    }
+
+    .subheadings {
+      border-bottom: 3px dashed black;
+      font-family: pacifico, cursive;
+      letter-spacing: 3px;
+    }
+
+    .paragraphs {
+      font-family: courier new;
+      font-size: 22px;
+      padding-left: 50px;
+      line-height: 2em;
+    }
+
+    span {
+      color: #F96714;
+      font-weight: 900;
+    }
+  </style>
+</head>
+<body>
+  <div id="maincontainer">
+    <div id="title"></div>  
+    <div id="containers">
+      <div id="container1">
+
+        <!-- Section for Normal String Methods -->
+      <section id="string-methods">
+        <!-- Your subheading and paragraphs for original string, length, uppercase, etc. -->
+      </section>
+
+      <!-- Section for CharAt Methods -->
+      <section id="charat-methods">
+        <!-- Subheading + paragraph for charAt -->
+      </section>
+
+      <!-- Section for CharCodeAt Methods -->
+      <section id="charcodeat-methods">
+        <!-- Subheading + paragraph for charCodeAt -->
+      </section>
+
+      <!-- Section for FromCharCode Methods -->
+      <section id="fromcharcode-methods">
+        <!-- Subheading + paragraph for fromCharCode -->
+      </section>
+
+      <!-- Section for IndexOf & LastIndexOf -->
+      <section id="indexof-methods">
+        <!-- Subheading + paragraphs for indexOf, lastIndexOf, email check -->
+      </section>
+       
+      <!-- Section for Search & Match -->
+      <section id="search-match-methods">
+        <!-- Subheading + paragraphs for search & match -->
+      </section>
+
+      <!-- Section for Trim -->
+      <section id="trim">
+        <!-- Subheading + paragraphs for trim -->
+      </section>
+
+      <!-- Section for TrimStart -->
+      <section id="trimstart">
+        <!-- Subheading + paragraphs for trimStart -->
+      </section>
+
+      <!-- Section for TrimEnd -->
+      <section id="trimend">
+        <!-- Subheading + paragraphs for trimEnd -->
+      </section>
+
+      <!-- Section for Slice -->
+      <section id="slice">
+        <!-- Subheading + paragraphs for Slice -->
+      </section>
+
+        <!-- Section for Substring -->
+      <section id="substring">
+        <!-- Subheading + paragraphs for Substring -->
+      </section> 
+
+              <!-- Section for Substr -->
+      <section id="substr">
+        <!-- Subheading + paragraphs for Substr -->
+      </section> 
+
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const elTitle = document.getElementById('title');
+    const elContainers = document.getElementById('containers');
+    const elContainer1 = document.getElementById('container1');
+    const elStringMethods = document.getElementById('string-methods');
+    const elCharatMethods = document.getElementById('charat-methods');
+    const elCharCodeatMethods = document.getElementById('charcodeat-methods');
+    const elFromCharCodeMethods = document.getElementById('fromcharcode-methods');
+    const elIndexOfMethods = document.getElementById('indexof-methods');
+    const elSearchMatchMethods = document.getElementById('search-match-methods');
+    const elTrim = document.getElementById('trim');
+    const elTrimStart = document.getElementById('trimstart');
+    const elTrimEnd = document.getElementById('trimend');
+    const elSlice = document.getElementById('slice');
+    const elSubstring = document.getElementById('substring');
+    const elSubstr = document.getElementById('substr');
+
+
+    const titleHeading = document.createElement('h1');
+    titleHeading.id = 'titleheading';
+    titleHeading.textContent = `String Built-In Methods In JavaScript`;
+    elTitle.appendChild(titleHeading);
+
+
+    function rHeading(cont, text) {
+      const subHeading = document.createElement('h2');
+      subHeading.classList.add('subheadings');
+      subHeading.innerHTML = text;
+      cont.appendChild(subHeading);
+    }
+
+
+    rHeading(elStringMethods,`<span>Normal String</span> Built In Methods In JavaScript`);
+
+
+    function r(cont, text) {
+      const p = document.createElement('p');
+      p.classList.add('paragraphs');
+      p.innerHTML = text +'<hr>'; 
+      cont.appendChild(p);
+    }
+
+
+    let str = 'Paulo Trindade';
+    r(elStringMethods, `Original String = <b>${str}</b>`);
+    r(elStringMethods, `Length of given String = <b>${str.length}</b>`);
+    r(elStringMethods, `Upper Case = <b>${str.toUpperCase()}</b>`);
+    r(elStringMethods, `Lower Case = <b>${str.toLowerCase()}</b>`);
+    r(elStringMethods, `Bold = <b>${str.bold()}</b>`);
+    r(elStringMethods, `Italics = <b>${str.italics()}</b>`);
+    r(elStringMethods, `Big = <b>${str.big()}</b>`);
+    r(elStringMethods, `Small = <b>${str.small()}</b>`);
+    r(elStringMethods, `Super Script = <b>${str.sup()}</b>`);
+    r(elStringMethods, `Super Script = <b>${str.sub()}</b>`);
+    r(elStringMethods, `Font Color = <b>${str.fontcolor('blue')}</b>`);
+
+    rHeading(elCharatMethods,`<span>CharAt(Index Pos)</span> Built In Methods In JavaScript`);
+    r(elCharatMethods, `Original String = <b>${str}</b>`)
+    r(elCharatMethods, `At Index Pos 6 we have = <b>${str.charAt(6)}</b>`);
+
+    rHeading(elCharCodeatMethods,`<span>CharCodeAt(Index Pos)</span> Built In Methods In JavaScript`);
+    r(elCharCodeatMethods, `At Index Pos 6 we have Unicode value (Ascii No) = <b>${str.charCodeAt(6)}</b>`);
+
+    rHeading(elFromCharCodeMethods, `<span>FromCharCode(ascii no, ascii no, ...)</span> Built In Methods In JavaScript`);
+    const output = String.fromCharCode(84, 72, 65, 78, 75) + ' ' + String.fromCharCode(89, 79, 85)
+    r(elFromCharCodeMethods, `Let Me Tell All My Students At Udemy: <b>${output}</b>`); 
+
+    rHeading(elIndexOfMethods, `<span>IndexOf(needle, pos+1) & lastIndexOf('needle')</span> Built In Methods In JavaScript`);
+    r(elIndexOfMethods, `Original String = <b>${str}</b>`)
+    r(elIndexOfMethods, `First a position at: <b>${str.indexOf('a')}</b>`); 
+    r(elIndexOfMethods, `Last a position at: <b>${str.lastIndexOf('a')}</b>`); 
+
+    const email = 'Rambo@gmail.com';
+    r(elIndexOfMethods, `First @ position at: <b>${email.indexOf('@')}</b>`); 
+    r(elIndexOfMethods, `Last @ position at: <b>${email.lastIndexOf('@')}</b>`); 
+
+    if (email.indexOf('@') === email.lastIndexOf('@')) {
+        r(elIndexOfMethods, `YOUR EMAIL ${email} IS <b>CORRECT</b>`);
+    }else {
+    r(elIndexOfMethods, `YOUR EMAIL ${email} IS <b>INCORRECT</b>`); 
+    }
+
+    r(elIndexOfMethods, `Second a position (${str}) at: <b>${str.indexOf('a', 2)}</b>`); 
+    r(elIndexOfMethods, `Tr position (${str}) at: <b>${str.indexOf('Tr')}</b>`); 
+
+    rHeading(elSearchMatchMethods, `<span>Search('needle') & Match('needle')</span> In JavaScript`);
+    r(elSearchMatchMethods, `Original String = <b>${str}</b>`);
+    r(elSearchMatchMethods, `Search first T position at: <b>${str.search('T')}</b>`); 
+    r(elSearchMatchMethods, `Search first stupid position at: <b>${str.search('stupid')}</b>`); 
+    r(elSearchMatchMethods, `Match T: <b>${str.match('T')}</b>`); 
+    r(elSearchMatchMethods, `Match Tr: <b>${str.match('Tr')}</b>`)
+    r(elSearchMatchMethods, `Match stupid: <b>${str.match('stupid')}</b>`)
+
+    const userName = '  Rambo_05      ';
+    rHeading(elTrim, `<span>Trim</span> Built In Methods In JavaScript`);
+    r(elTrim, `userName original String = <b>${userName}</b>`);
+    r(elTrim, `Length of userName original String = <b>${userName.length}</b>`);
+    const trimBoth = userName.trim();
+    r(elTrim, `Length of Original String After Trim() = <b>${trimBoth.length}</b>`);
+
+    rHeading(elTrimStart, `<span>TrimStart()</span> Buil In Methods In JavaScript`);
+    r(elTrimStart, `userName original String = <b>${userName}</b>`);
+    r(elTrimStart, `Length of userName original String = <b>${userName.length}</b>`);
+    const leftTrim = userName.trimStart();
+    r(elTrimStart, `Length of Original String After TrimStart() = <b>${leftTrim.length}</b>`);
+
+    rHeading(elTrimEnd, `<span>TrimEnd()</span> Buil In Methods In JavaScript`);
+    r(elTrimEnd, `userName original String = <b>${userName}</b>`);
+    r(elTrimEnd, `Length of userName original String = <b>${userName.length}</b>`);
+    const rightTrim = userName.trimEnd();
+    r(elTrimEnd, `Length of Original String After TrimStart() = <b>${rightTrim.length}</b>`);
+
+    rHeading(elSlice, `<span>Slice(start, stop)</span> Buil In Methods In JavaScript`);
+    r(elSlice, `str original String = <b>${str}</b>`);
+    r(elSlice, `Slice(0) = <b>${str.slice(0)}</b>`);
+    r(elSlice, `Slice(4) = <b>${str.slice(4)}</b>`);
+    r(elSlice, `Slice(4, 8) = <b>${str.slice(4, 8)}</b>`);
+    r(elSlice, `Slice(4, 2) = <b>${str.slice(4, 2)}Return blank (bool false) stop cannot be greater than start</b>`);
+    r(elSlice, `Slice(-5) = <b>${str.slice(-5)}</b> Starts from -1 and Stops -5`);
+    r(elSlice, `Slice(-5) = <b>${str.slice(-5)}</b>`);
+    r(elSlice, `Slice(-8, -5) = <b>${str.slice(-8, -5)}</b>`);
+    const pic = 'rambo.jpg'
+    const sliceJpg = pic.slice(-3);
+    r(elSlice, `pic original String = <b>${pic}</b>`);
+    r(elSlice, `pic After slicing jpg pic.slice(0, 5)= <b>${pic.slice(0, 5)}</b>`);
+
+    rHeading(elSubstring, `<span>Substring(start, stop)</span> Buil In Methods In JavaScript`);
+    r(elSubstring, `str original String = <b>${str}</b>`);
+    r(elSubstring, `Substring(4) = <b>${str.substring(4)}</b>`);
+    r(elSubstring, `Substring(4, 8) = <b>${str.substring(4, 8)}</b>`);
+    r(elSubstring, `Substring(4, 2) = <b>${str.substring(4, 2)}</b>`);
+    r(elSubstring, `Substring(-5) = <b>${str.substring(-5)}</b>`);
+    r(elSubstring, `Substring(-8, 5) = <b>${str.substring(-8, 5)}</b>`);
+    r(elSubstring, `Substring(-8, -5) = <b>${str.substring(-8, -5)}</b> Negative in stop returns blank(bool false)`);
+
+    rHeading(elSubstr, `<span>Substr(start, stop)</span> Buil In Methods In JavaScript`);
+    r(elSubstr, `str original String = <b>${str}</b>`);
+    r(elSubstr, `Substring(4) = <b>${str.substr(4)}</b>`);
+    r(elSubstr, `Substring(4, 8) = <b>${str.substr(4, 8)}</b>`);
+    r(elSubstr, `Substring(4, 2) = <b>${str.substr(4, 2)}</b>`);
+    r(elSubstr, `Substring(-5) = <b>${str.substr(-5)}</b>`);
+    r(elSubstr, `Substring(-8, 5) = <b>${str.substr(-8, 5)}</b>`);
+    r(elSubstr, `Substring(-8, -5) = <b>${str.substr(-8, -5)}</b> Negative in stop returns blank(bool false)`);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </script>
+</body>
+</html>

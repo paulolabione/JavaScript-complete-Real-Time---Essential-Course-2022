@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <title>Array Built-In Methods</title>
+
+  <style>
+    #heading1 {
+      color: green;
+      background-color: lightblue;  
+      width: fit-content;
+      margin: 0 auto 20px auto;
+      padding: 5px;
+      border-radius: 10px;
+      border: 2px dashed #333;
+    }
+
+    .headings {
+      border-bottom: 3px dashed black;
+      font-family: 'pacifico', cursive;
+      letter-spacing: 3px;
+    }
+
+    p {
+      font-family: courier new;
+      font-size: 22px;
+      padding-left: 50px;
+      line-height: 2em;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="title"></div>
+  <div id="maincontainer">
+    <div id="container1"></div>
+    <div id="container2"></div>
+    <div id="container3"></div>
+    <div id="container4"></div>
+    <div id="container5"></div>
+    <div id="container6"></div>
+    <div id="container7"></div>
+    <div id="container8"></div>
+    <div id="container9"></div>
+    <div id="container10"></div>
+  </div>  
+
+  <script>
+
+    const elTitle = document.getElementById('title');
+    const elMainContainer = document.getElementById('maincontainer');
+    const elContainer1 = document.getElementById('container1');
+    const elContainer2 = document.getElementById('container2');
+    const elContainer3 = document.getElementById('container3');
+    const elContainer4 = document.getElementById('container4');
+    const elContainer5 = document.getElementById('container5');
+    const elContainer6 = document.getElementById('container6');
+    const elContainer7 = document.getElementById('container7');
+    const elContainer8 = document.getElementById('container8');
+    const elContainer9 = document.getElementById('container9');
+    const elContainer10 = document.getElementById('container10');
+
+    const heading1 = document.createElement('h1');
+    heading1.id = 'heading1';
+    heading1.textContent = `Array Built-In Methods In JavaScript`;
+    elTitle.appendChild(heading1);
+
+    const heading2 = document.createElement('h1');
+    heading2.classList.add('headings');
+    heading2.textContent = `Join('Arg') Built in Methods in JavaScript`;
+    elContainer1.appendChild(heading2);
+
+    let a = new Array('This', 'is', 'My', 'New', 'Car', 'in', 'US');
+
+    const p1 = document.createElement('p');
+    p1.textContent = `Original Array a = ${a}`;
+    p1.style.fontWeight = 'bold';
+    elContainer1.appendChild(p1);
+
+    a = a.join(' ');
+    const p2 = document.createElement('p');
+    p2.innerHTML = `After <span style= 'color: red;'>Join</span> = ${a}<hr>`;
+    p2.style.fontWeight = 'bold';
+    elContainer1.appendChild(p2);
+
+    let b = [78, 98, 67, 89, 87, 54];
+
+    const p3 = document.createElement('p');
+    p3.textContent = `Original Array = ${b}`;
+    p3.style.fontWeight = 'bold';
+    elContainer1.appendChild(p3);
+
+    const totalb = b.reduce((a, b) => a + b, 0);
+    // b = b.join('+');
+    // totalb = eval(b);
+    const p4 = document.createElement('p');
+    p4.innerHTML = `After <span style= 'color: red;'>Join</span> = ${totalb}<hr>`;
+    p4.style.fontWeight = 'bold';
+    elContainer1.appendChild(p4);
+
+    const heading3 = document.createElement('h1');
+    heading3.classList.add('headings');
+    heading3.textContent = `Concat('Array name') Built in Methods in JavaScript`;
+    elContainer2.appendChild(heading3);
+
+    let c = [10, 20, 30];
+    let d = [40, 50];
+    let e = ['Raj', 'Ravi', 'Tony'];
+
+    const p5 = document.createElement('p');
+    p5.textContent = `Original Array a = ${c}`;
+    p5.style.fontWeight = 'bold';
+    elContainer2.appendChild(p5);
+
+    const p6 = document.createElement('p');
+    p6.textContent = `Original Array a = ${d}`;
+    p6.style.fontWeight = 'bold';
+    elContainer2.appendChild(p6);
+
+    const p7 = document.createElement('p');
+    p7.textContent = `Original Array a = ${e}`;
+    p7.style.fontWeight = 'bold';
+    elContainer2.appendChild(p7);
+
+    const p8 = document.createElement('p');
+    p8.innerHTML = `After <span style= 'color: red;'>Merge</span> 2 Arrays in Single ${c.concat(d)}`;
+    p8.style.fontWeight = 'bold';
+    elContainer2.appendChild(p8);
+
+    const p9 = document.createElement('p');
+    p9.innerHTML = `After <span style= 'color: red;'>Merge</span> 3 Arrays in Single ${e.concat(c.concat(d))}`;
+    p9.style.fontWeight = 'bold';
+    elContainer2.appendChild(p9);
+
+    const p10 = document.createElement('p');
+    p10.innerHTML = `After <span style= 'color: red;'>Total People Joined</span>: ${e.concat(c.concat(d)).length}<hr>`;
+    p10.style.fontWeight = 'bold';
+    elContainer2.appendChild(p10);
+
+    const heading4 = document.createElement('h1');
+    heading4.classList.add('headings');
+    heading4.textContent = `Sort() Built in Methods in JavaScript`;
+    elContainer3.appendChild(heading4);
+
+    let f = ['James', 'John', 'Joseph', 'Zayn', 'Aakil', 'Tina', 'Joyce'];
+
+    const p11 = document.createElement('p');
+    p11.textContent = `Original Array a = ${f}`;
+    p11.style.fontWeight = 'bold';
+    elContainer3.appendChild(p11);
+
+    const p12 = document.createElement('p');
+    p12.innerHTML = `After <span style= 'color: red;'>Sort()</span>: ${f.sort()}<hr>`;
+    p12.style.fontWeight = 'bold';
+    elContainer3.appendChild(p12);
+
+    const heading5 = document.createElement('h1');
+    heading5.classList.add('headings');
+    heading5.textContent = `Reverse() Built in Methods in JavaScript`;
+    elContainer3.appendChild(heading5);
+
+    const p13 = document.createElement('p');
+    p13.textContent = `Original Array a = ${f}`;
+    p13.style.fontWeight = 'bold';
+    elContainer4.appendChild(p13);
+
+    const p14 = document.createElement('p');
+    p14.innerHTML = `After <span style= 'color: red;'>Reverse()</span>: ${f.reverse()}<hr>`;
+    p14.style.fontWeight = 'bold';
+    elContainer4.appendChild(p14);
+
+    const heading6 = document.createElement('h1');
+    heading6.classList.add('headings');
+    heading6.textContent = `Unshift() Built in Methods in JavaScript`;
+    elContainer5.appendChild(heading6);
+
+    let g = [10, 20, 'Tony'];
+    let h = g.unshift(1, 3, 9);
+
+    const p15 = document.createElement('p');
+    p15.textContent = `Original Array a = ${g}`;
+    p15.style.fontWeight = 'bold';
+    elContainer5.appendChild(p15);
+
+    const p16 = document.createElement('p');
+    p16.innerHTML = `After <span style= 'color: red;'>Unshift()</span>: ${g} => And the length is ${h}<hr>`;
+    p16.style.fontWeight = 'bold';
+    elContainer5.appendChild(p16);
+
+    
+    const heading7 = document.createElement('h1');
+    heading7.classList.add('headings');
+    heading7.textContent = `shift() Built in Methods in JavaScript`;
+    elContainer6.appendChild(heading7);
+
+    let i = g.shift()
+
+    const p17 = document.createElement('p');
+    p17.textContent = `Original Array a = ${g}`;
+    p17.style.fontWeight = 'bold';
+    elContainer6.appendChild(p17);
+
+    const p18 = document.createElement('p');
+    p18.innerHTML = `After <span style= 'color: red;'>shift()</span>: ${g} => ${i} was removed at the start<hr>`;
+    p18.style.fontWeight = 'bold';
+    elContainer6.appendChild(p18);
+
+    const heading8 = document.createElement('h1');
+    heading8.classList.add('headings');
+    heading8.textContent = `Push() Built in Methods in JavaScript`;
+    elContainer7.appendChild(heading8); 
+
+    let j = [1, 2, 3];
+    let l = j.push(4, 5, 6);
+
+    const p19 = document.createElement('p');
+    p19.textContent = `Original Array a = ${g}`;
+    p19.style.fontWeight = 'bold';
+    elContainer7.appendChild(p19);
+
+    const p20 = document.createElement('p');
+    p20.innerHTML = `After <span style= 'color: red;'>Push()</span>: ${j} => And the length is ${l}<hr>`;
+    p20.style.fontWeight = 'bold';
+    elContainer7.appendChild(p20);
+
+    const heading9 = document.createElement('h1');
+    heading9.classList.add('headings');
+    heading9.textContent = `Pop() Built in Methods in JavaScript`;
+    elContainer8.appendChild(heading9); 
+
+    let m = j.pop();
+
+    const p21 = document.createElement('p');
+    p21.textContent = `Original Array a = ${j}`;
+    p21.style.fontWeight = 'bold';
+    elContainer8.appendChild(p21);
+
+    const p22 = document.createElement('p');
+    p22.innerHTML = `After <span style= 'color: red;'>Pop()</span>: ${j} => ${m} was removed at the end<hr>`;
+    p22.style.fontWeight = 'bold';
+    elContainer8.appendChild(p22);
+
+    const heading10 = document.createElement('h1');
+    heading10.classList.add('headings');
+    heading10.textContent = `Delete Built in Operator in JavaScript`;
+    elContainer9.appendChild(heading10); 
+
+    let n = [11, 12, 13, 14, 15];
+    let o = delete n[2];
+
+    const p23 = document.createElement('p');
+    p23.textContent = `Original Array n = ${n}`;
+    p23.style.fontWeight = 'bold';
+    elContainer9.appendChild(p23);
+
+    const p24 = document.createElement('p');
+    p24.innerHTML = `After <span style= 'color: red;'>Delete</span>: ${n} => 13 was removed from index 2 but leaves a hole<hr>`;
+    p24.style.fontWeight = 'bold';
+    elContainer9.appendChild(p24);
+
+    const heading11 = document.createElement('h1');
+    heading11.classList.add('headings');
+    heading11.textContent = `Splice() Built in Methods in JavaScript`;
+    elContainer10.appendChild(heading11); 
+
+    let p = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    let q = p.splice(2, 1);
+
+    const p25 = document.createElement('p');
+    p25.textContent = `Original Array p = ${p}`;
+    p25.style.fontWeight = 'bold';
+    elContainer10.appendChild(p25); 
+
+    const p26 = document.createElement('p');
+    p26.innerHTML = `After <span style= 'color: red;'>Splice(start, count)</span>: ${p} => ${q} was removed from index 2 and does not leaves a hole<hr>`;
+    p26.style.fontWeight = 'bold';
+    elContainer10.appendChild(p26);
+
+
+
+    
+
+
+    
+
+  </script>
+  
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <title>Functions 2</title>
+
+  <style>
+    #heading {
+      color: red;
+      background-color: lightblue;
+      width: fit-content;
+      margin: 5px auto;
+      padding: 5px;
+      border-radius: 5px;
+      border: 1px dashed black;
+    }
+
+    #heading2 {
+      font-family: pacifico, cursive;
+      border-bottom: 3px dashed black;
+      margin-bottom: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="title"></div>
+  <div id="container"></div>  
+
+  <script>
+
+    const outTitle = document.getElementById('title');
+    const outContainer = document.getElementById('container');
+
+    const h1 = document.createElement('h1');
+    h1.id = 'heading';
+    h1.textContent = 'FUNCTIONS 2';
+    outTitle.appendChild(h1);
+
+    const h1Two = document.createElement('h1');
+    h1Two.id = 'heading2';
+    h1Two.textContent = `USER LOGIN`;
+    outContainer.appendChild(h1Two);
+
+    let email = 'rambo@gmail.com';
+    let pwd = 'Rambo123'
+
+    function user(name) {
+      const p = document.createElement('p');
+      p.id = 'username';
+      p.textContent = `Welcome ${name}`;
+      p.style.fontWeight = 'bold';
+      outContainer.appendChild(p);
+    }
+
+    // function login(type, message) {
+    //   const div = document.createElement('div');
+    //   div.id = 'type';
+    //   if (type === 'Error') {
+    //     div.style.fontWeight = 'bold';
+    //     div.style.fontSize = '30px';
+    //     div.style.color = 'red';
+    //   }
+    //   div.textContent = `${type} ${message}`;
+    //   outContainer.appendChild(div); 
+    // }
+
+    function login(type, message) {
+      let div = document.getElementById('type'); // check if div exists
+      if (!div) {
+        div = document.createElement('div');    // create if not
+        div.id = 'type';
+        outContainer.appendChild(div);
+      }
+      div.textContent = `${type} ${message}`;
+      div.style.fontWeight = type === 'Error' ? 'bold' : 'normal';
+      div.style.fontSize = type === 'Error' ? '30px' : '16px';
+      div.style.color = type === 'Error' ? 'red' : 'green';
+  }
+
+    if (email === 'rambo@gmail.com' && pwd === 'Rambo123') {
+      login('Success', 'You Are Logged In');
+      user('Rambo');
+
+      // Create profile image
+      const img = document.createElement('img');
+      img.src = 'images/Rambo.jpg'; // Rambo image
+      img.alt = 'Rambo';
+      // img.style.width = '100px'; // Optional styling
+      // img.style.borderRadius = '50%' // Optional styling
+
+      // Append to container
+      outContainer.appendChild(img);
+    }else {
+      login('Error', 'Invalid Login Details Given!!!')
+    }
+  </script>
+  
+</body>
+</html>

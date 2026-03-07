@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <!-- <meta http-equiv="refresh" content="1"> -->  <!-- Updates every second for clock update but video flashes-->
+  <title>Date Built In Methods In JavaScript</title>
+
+  <style>
+    #titleheading {
+      background-color: lightblue;
+      color: #333;
+      margin: 0 auto 30px auto;
+      width: fit-content;
+      padding: 5px 15px;
+      border-radius: 16px;
+      border: 1px dashed black;
+    }
+
+    .subheadings {
+      font-family: pacifico, cursive;
+      border-bottom: 3px dashed black;
+      letter-spacing: 3px;
+    }
+
+    .paragraphs {
+      font-family: courier new;
+      font-size: 22px;
+      padding-left: 50px;
+      line-height: 2em;
+    }
+
+    span {
+      color: #F95714;
+      font-weight: 900;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <div id="title"></div>
+    <div id="video"></div>
+    <div id="sections">
+      <!-- Section Get Date-->
+       <section id="getdate">
+        <!-- Subheadings and Paragraphs-->
+       </section>
+    </div>
+  </div>
+
+  <script>
+    const container = document.getElementById('container');
+    const elVideo = document.getElementById('video');
+    const elTitle = document.getElementById('title');
+    const elSections = document.getElementById('sections');
+    const elGetDate = document.getElementById('getdate');
+
+    const titleHeading = document.createElement('h1');
+    titleHeading.id = 'titleheading';
+    titleHeading.textContent = 'Date Built In Methods In JavaScript';
+    elTitle.appendChild(titleHeading);
+
+    function rSubheading(cont, text) {
+      const subheading = document.createElement('h2');
+      subheading.classList.add('subheadings');
+      subheading.innerHTML = text;
+      cont.appendChild(subheading);
+    }
+
+    function rParagraph(cont, text) {
+      const p = document.createElement('p');
+      p.classList.add('paragraphs');
+      p.innerHTML = text + '<hr>';
+      elGetDate.appendChild(p);
+    }
+
+    const videoDiv = document.createElement('div');
+    videoDiv.id = 'videodiv';
+    videoDiv.innerHTML = `<iframe 
+    width="560" 
+    height="315" 
+    src="https://www.youtube.com/embed/QXE5rEVlu20?si=Ok6iDxJ06dZgnHxL" 
+    title="YouTube video player" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+    referrerpolicy="strict-origin-when-cross-origin" 
+    allowfullscreen></iframe>`
+    elVideo.appendChild(videoDiv);
+
+    rSubheading(elGetDate, `<span>Get Date</span> Built In Methods In JavaScript`)
+    const d = new Date();
+    rParagraph(elGetDate, `Present Date & Time = <b>${d}</b>`);
+    rParagraph(elGetDate, `No of Miliseconds Completed right from Midnight:
+     Jan-01<sup>st-</sup>-2019 Till No: <b>${d.getTime()}</b>`);
+    rParagraph(elGetDate, `Present Date = <b>${d.getDate()}</b>`);
+    rParagraph(elGetDate, `Present Month = <b>${d.getMonth()}</b> January = 0`);
+    rParagraph(elGetDate, `Present Day = <b>${d.getDay()}</b> Sunday = 0`);
+    rParagraph(elGetDate, `Present Year = <b>${d.getFullYear()}</b>`)
+    rParagraph(elGetDate, `&#169; ${d.getFullYear()}, example.com All rights reserved.`);
+    rParagraph(elGetDate, `Present Hours = <b>${d.getHours()}</b>`)
+    rParagraph(elGetDate, `Present Minutes = <b>${d.getMinutes()}</b>`)
+    rParagraph(elGetDate, `Present Seconds = <b>${d.getSeconds()}</b>`)
+    rParagraph(elGetDate, `Present Time = <b>${d.getHours()}:${d.getMinutes()}:${d.getSeconds()}</b>`)
+    rParagraph(elGetDate, `Present Date & Time = <b>${d}</b>`);
+    d.setFullYear(2010);
+    d.setMonth(0);
+    d.setDate(0);
+    rParagraph(elGetDate, `Present Date & Time = <b>${d}</b>`);
+
+
+
+    
+
+
+  </script>
+  
+</body>
+</html>
